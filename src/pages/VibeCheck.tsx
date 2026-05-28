@@ -152,7 +152,7 @@ export default function VibeCheck() {
                         <p className="text-slate-400 font-bold">{meal.desc}</p>
                       </div>
                       <a 
-                        href={`/the-truth.html?search=${encodeURIComponent(getSearchTerm(meal.name))}`} 
+                        href={`the-truth.html?search=${encodeURIComponent(getSearchTerm(meal.name))}`} 
                         className="bg-sky-50 text-brand p-5 rounded-2xl hover:bg-brand hover:text-white transition-all shadow-sm shadow-sky-100 self-stretch sm:self-auto flex items-center justify-center"
                       >
                         <ChevronRight size={24} />

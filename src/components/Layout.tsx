@@ -6,7 +6,7 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
   return (
     <header className="fixed top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-xl z-[1000] px-6 border-b border-sky-100 flex items-center">
       <div className="max-w-7xl mx-auto w-full flex justify-between items-center relative">
-        <a href="/index.html" className="flex items-center gap-2 group">
+        <a href="index.html" className="flex items-center gap-2 group">
           <div className="w-10 h-10 bg-brand rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand/20 group-hover:rotate-12 transition-transform">
             <Utensils size={20} />
           </div>
@@ -34,11 +34,11 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
 
 export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const menuItems = [
-    { path: "/index.html", label: "探索推薦", icon: HomeIcon },
-    { path: "/vibe-check.html", label: "心情探測", icon: Zap },
-    { path: "/the-truth.html", label: "美食真相", icon: MapPin },
-    { path: "/survival-tips.html", label: "生存指南", icon: BookOpen },
-    { path: "/group-fight.html", label: "挑戰轉盤", icon: Swords },
+    { path: "index.html", label: "探索推薦", icon: HomeIcon },
+    { path: "vibe-check.html", label: "心情探測", icon: Zap },
+    { path: "the-truth.html", label: "美食真相", icon: MapPin },
+    { path: "survival-tips.html", label: "生存指南", icon: BookOpen },
+    { path: "group-fight.html", label: "挑戰轉盤", icon: Swords },
   ];
 
   return (
@@ -103,21 +103,25 @@ export function Navbar() {
   const currentPath = window.location.pathname;
   
   const navItems = [
-    { path: "/index.html", label: "首頁", icon: HomeIcon },
-    { path: "/vibe-check.html", label: "心情", icon: Zap },
-    { path: "/the-truth.html", label: "真相", icon: MapPin },
-    { path: "/survival-tips.html", label: "指南", icon: BookOpen },
-    { path: "/group-fight.html", label: "PK", icon: Swords },
+    { path: "index.html", label: "首頁", icon: HomeIcon },
+    { path: "vibe-check.html", label: "心情", icon: Zap },
+    { path: "the-truth.html", label: "真相", icon: MapPin },
+    { path: "survival-tips.html", label: "指南", icon: BookOpen },
+    { path: "group-fight.html", label: "PK", icon: Swords },
   ];
 
   return (
     <nav className="fixed bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-[1000] w-[94%] sm:w-max px-1.5 sm:px-3 md:px-4 py-1.5 sm:py-2.5 bg-white/95 backdrop-blur-2xl rounded-full flex flex-nowrap items-center justify-between sm:justify-center gap-0.5 sm:gap-1.5 md:gap-2 shadow-[0_20px_50px_rgba(14,165,233,0.15)] border border-sky-100 pointer-events-auto">
       {navItems.map((item) => {
-        // Simple path matching for MPA (both direct filename and extensionless paths)
-        const isActive = 
-          currentPath === item.path || 
-          currentPath === item.path.replace(".html", "") ||
-          (currentPath === "/" && item.path === "/index.html");
+        const normalizePath = (p: string) => {
+          const clean = p.split('?')[0].split('#')[0];
+          const lastPart = clean.split('/').pop() || '';
+          if (!lastPart || !lastPart.includes('.')) {
+            return 'index.html';
+          }
+          return lastPart;
+        };
+        const isActive = normalizePath(currentPath) === normalizePath(item.path);
         return (
           <a
             key={item.path}

@@ -14,21 +14,21 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <a 
-            href="/vibe-check.html" 
+            href="vibe-check.html" 
             className="group relative h-48 bg-red-500 rounded-[2.5rem] overflow-hidden flex items-center justify-center transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-red-200"
           >
             <span className="relative z-10 text-white text-3xl font-black tracking-widest">壓力山大</span>
             <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a 
-            href="/vibe-check.html" 
+            href="vibe-check.html" 
             className="group relative h-48 bg-[#B8860B] rounded-[2.5rem] overflow-hidden flex items-center justify-center transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-amber-200"
           >
             <span className="relative z-10 text-white text-3xl font-black tracking-widest">月底吃土</span>
             <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a 
-            href="/vibe-check.html" 
+            href="vibe-check.html" 
             className="group relative h-48 bg-[#9333EA] rounded-[2.5rem] overflow-hidden flex items-center justify-center transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-purple-200"
           >
             <span className="relative z-10 text-white text-3xl font-black tracking-widest">剛被稱讚</span>
@@ -47,7 +47,7 @@ export default function Home() {
           {ARTICLES.map((art) => (
             <a 
               key={art.id} 
-              href={`/survival-tips.html?id=${art.id}`}
+              href={`survival-tips.html?id=${art.id}`}
               className="snap-start min-w-[300px] md:min-w-[400px] bg-white rounded-[3.5rem] p-6 border border-sky-50 shadow-sm hover:shadow-2xl hover:shadow-sky-100/50 transition-all duration-500 group"
             >
               <div className="aspect-[4/3] rounded-[2.5rem] overflow-hidden mb-6 relative">
