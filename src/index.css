@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+  
+  --color-brand: #38BDF8; /* Lighter Sky Blue */
+  --color-accent: #7DD3FC; /* Very Light Blue for emphasis */
+  --color-warm: #F0F9FF; /* Softest light blue wash */
+  --color-ink: #0369A1; /* Muted deep blue instead of near-black */
+  --color-success: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans font-extrabold tracking-tight;
+  }
+}
+
+.logo-handwritten {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.btn-mood {
+  @apply px-8 py-4 rounded-2xl font-bold text-white transition-all active:scale-95 shadow-md hover:shadow-lg;
+}
+
+.article-card {
+  @apply min-w-[280px] bg-warm rounded-3xl p-6 border border-slate-100 flex-shrink-0;
+}

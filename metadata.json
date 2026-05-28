@@ -1,0 +1,10 @@
+{
+  "name": "BiteBuddy",
+  "description": "A playful meal selection website to help you decide what to eat based on your mood, popularity, or a spin of the wheel.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
