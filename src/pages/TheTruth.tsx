@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, Clock, ExternalLink, Navigation, Star, Filter, Search } from "lucide-react";
 import SafeImage from "../components/SafeImage";
@@ -1179,8 +1178,7 @@ const RESTAURANTS = [
 ];
 
 export default function TheTruth() {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
+  const searchParams = new URLSearchParams(window.location.search);
   const initialSearch = searchParams.get("search") || "";
   
   const [searchTerm, setSearchTerm] = useState(initialSearch);
